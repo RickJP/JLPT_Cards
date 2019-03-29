@@ -1,13 +1,14 @@
 <?php
+  header('Content-Type: text/html; charset=utf-8');
   $TEMPLATES_DIR = 'templates/';
-  $PHP_DIR = 'PHP/';
+  $PHP_DIR = 'php/';
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="text/html; charset=utf-8">
   <title>Image Gallery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- Compiled and minified CSS -->
@@ -30,8 +31,6 @@
           mysqli_close($db);
       ?>
     </div>    
-
-
 
   <!-- PAGINATION CONTROLS --> 
   <?php require $TEMPLATES_DIR . 'paginationControls.html'; ?>
