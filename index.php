@@ -31,6 +31,8 @@
       ?>
     </div>    
 
+
+
   <!-- PAGINATION CONTROLS --> 
   <?php require $TEMPLATES_DIR . 'paginationControls.html'; ?>
 
