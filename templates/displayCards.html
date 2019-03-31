@@ -1,13 +1,26 @@
-<div class="col s12 m4 l3 xl2">
-  <div class="card blue lighten-4 z-depth-2">
-    <div class="card-content hoverable">
-      <span class="card-title"><?php echo $row["Kanji"] ?></span>
-      <div class="onyomi left"><?php echo $row["Onyomi"];  ?></div>
-      <div class="kunyomi right"><?php echo $row["Kunyomi"]; ?></div>
-    </div>
-    
-    <div class="card-action blue lighten-3 def-box english">
-      <p class="ellipsis"><?php echo $row["English"] ?> </p>
+
+
+<div class="row">
+  <?php if($res->num_rows > 0){
+            while($row = $res->fetch_assoc()){
+      ?>
+
+  <div class="col s12 m4 l3 xl2">
+    <div class="card blue lighten-4 z-depth-2">
+      <div class="card-content hoverable">
+        <span class="card-title"><?php echo $row["Kanji"] ?></span>
+        <div class="onyomi left"><?php echo $row["Onyomi"];  ?></div>
+        <div class="kunyomi right"><?php echo $row["Kunyomi"]; ?></div>
+      </div>
+
+      <div class="card-action blue lighten-3 def-box english">
+        <p class="ellipsis"><?php echo $row["English"] ?> </p>
+      </div>
     </div>
   </div>
-</div>  
+
+  <?php } } 
+          mysqli_close($db);
+      ?>
+</div>
+

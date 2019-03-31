@@ -5,6 +5,7 @@
   } else {
     $level = 1;
   }
+  $ROOT_DIR = '../';
 ?>
 
 <style>
@@ -28,7 +29,7 @@
    <div class="navbar-fixed">
         <nav>
           <div class="nav-wrapper blue lighten-2">
-           <a href="index.php" class="brand-logo center white-text"><i class="material-icons">cloud</i>JLPT <?php echo str_repeat('&nbsp;', 3) . 'N' . $level ?></a>
+            <a href="../index.php" class="brand-logo center white-text"><i class="material-icons">cloud</i>JLPT <?php echo str_repeat('&nbsp;', 3) . 'N' . $level ?></a>
 
 
             <ul class="right hide-on-small-and-down">
@@ -40,11 +41,11 @@
             <ul id="dropdown1" class="dropdown-content blue lighten-2">
               <li class="divider"></li>
               <ul class="white-text">
-              <li><a class="kanji n1 white-text" href="?pageno=1&level=1">N1</a></li>
-              <li><a class="kanji n2 white-text" href="?pageno=1&level=2">N2</a></li>
-              <li><a class="kanji n3 white-text" href="?pageno=1&level=3">N3</a></li>
-              <li><a class="kanji n4 white-text" href="?pageno=1&level=4">N4</a></li>
-              <li><a class="kanji n5 white-text" href="?pageno=1&level=5">N5</a></li>
+              <li><a class="kanji n1 white-text" href="../?pageno=1&level=1">N1</a></li>
+              <li><a class="kanji n2 white-text" href="../?pageno=1&level=2">N2</a></li>
+              <li><a class="kanji n3 white-text" href="../?pageno=1&level=3">N3</a></li>
+              <li><a class="kanji n4 white-text" href="../?pageno=1&level=4">N4</a></li>
+              <li><a class="kanji n5 white-text" href="../?pageno=1&level=5">N5</a></li>
               <li class="divider"></li>
               <li><a class=" white-text">OTHERS</a></li>
               </ul>
@@ -56,11 +57,11 @@
                 <li class="white-text"><i class="material-icons">dashboard</i></li>
                 <li class="divider"></li>
                  <ul class="white-text">
-                  <li><a class="kanji n1 white-text" href="?pageno=1&level=1">N1</a></li>
-              <li><a class="kanji n2 white-text" href="?pageno=1&level=2">N2</a></li>
-              <li><a class="kanji n3 white-text" href="?pageno=1&level=3">N3</a></li>
-              <li><a class="kanji n4 white-text" href="?pageno=1&level=4">N4</a></li>
-              <li><a class="kanji n5 white-text" href="?pageno=1&level=5">N5</a></li>
+                  <li><a class="kanji n1 white-text" href="../?pageno=1&level=1">N1</a></li>
+              <li><a class="kanji n2 white-text" href="../?pageno=1&level=2">N2</a></li>
+              <li><a class="kanji n3 white-text" href="../?pageno=1&level=3">N3</a></li>
+              <li><a class="kanji n4 white-text" href="../?pageno=1&level=4">N4</a></li>
+              <li><a class="kanji n5 white-text" href="../?pageno=1&level=5">N5</a></li>
                   <li class="divider"></li>
                   <li><a class=" white-text" href="#!">OTHERS</a></li>
                 </ul>
@@ -98,12 +99,8 @@
 $(document).ready(function(){
     $('.sidenav').sidenav();
     $('.dropdown-trigger').dropdown();
-    
-
     $('#autocomplete-input').on('keydown', (e) => {
       
-       
-
       if (e.keyCode === 13) {
         let searchText = $('#autocomplete-input').val().toString();
         
