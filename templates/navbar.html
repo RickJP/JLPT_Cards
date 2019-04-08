@@ -5,6 +5,7 @@
   } else {
     $level = 1;
   }
+  $ROOT_DIR = '../';
 ?>
 
 <style>
@@ -24,62 +25,65 @@
     /* right: -20px; */
   }
 </style>
+
 <body>
-   <div class="navbar-fixed">
-        <nav>
-          <div class="nav-wrapper blue lighten-2">
-           <a href="index.php" class="brand-logo center white-text"><i class="material-icons">cloud</i>JLPT <?php echo str_repeat('&nbsp;', 3) . 'N' . $level ?></a>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper blue lighten-2">
+        <a href="../index.php" class="brand-logo center white-text"><i class="material-icons">cloud</i>JLPT
+          <?php echo str_repeat('&nbsp;', 3) . 'N' . $level ?></a>
 
 
-            <ul class="right hide-on-small-and-down">
-              <!-- DROPDOWN MENU ON THE RIGHT -->
-              <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">LEVELS<i
-                    class="medium material-icons right">details</i></a></li>
-            </ul>
-  
-            <ul id="dropdown1" class="dropdown-content blue lighten-2">
-              <li class="divider"></li>
-              <ul class="white-text">
+        <ul class="right hide-on-small-and-down">
+          <!-- DROPDOWN MENU ON THE RIGHT -->
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">漢字<i
+                class="medium material-icons right">details</i></a></li>
+        </ul>
+
+        <ul id="dropdown1" class="dropdown-content blue lighten-2">
+          <li class="divider"></li>
+          <ul class="white-text">
+            <li><a class="kanji n1 white-text" href="?pageno=1&level=1">N1</a></li>
+            <li><a class="kanji n2 white-text" href="?pageno=1&level=2">N2</a></li>
+            <li><a class="kanji n3 white-text" href="?pageno=1&level=3">N3</a></li>
+            <li><a class="kanji n4 white-text" href="?pageno=1&level=4">N4</a></li>
+            <li><a class="kanji n5 white-text" href="?pageno=1&level=5">N5</a></li>
+            <li class="divider"></li>
+            <li><a class=" white-text">OTHERS</a></li>
+          </ul>
+        </ul>
+        <!-- SLIDE OUT MENU -->
+        <ul id="slide-out" class="sidenav">
+          <ul class="blue lighten-2 white-text">
+
+            <li class="white-text"><i class="material-icons">dashboard</i></li>
+            <li class="divider"></li>
+            <ul class="white-text">
               <li><a class="kanji n1 white-text" href="?pageno=1&level=1">N1</a></li>
               <li><a class="kanji n2 white-text" href="?pageno=1&level=2">N2</a></li>
               <li><a class="kanji n3 white-text" href="?pageno=1&level=3">N3</a></li>
               <li><a class="kanji n4 white-text" href="?pageno=1&level=4">N4</a></li>
               <li><a class="kanji n5 white-text" href="?pageno=1&level=5">N5</a></li>
               <li class="divider"></li>
-              <li><a class=" white-text">OTHERS</a></li>
-              </ul>
+              <li><a class=" white-text" href="#!">OTHERS</a></li>
             </ul>
-            <!-- SLIDE OUT MENU -->
-            <ul id="slide-out" class="sidenav">
-              <ul class="blue lighten-2 white-text">
+          </ul>
+        </ul>
 
-                <li class="white-text"><i class="material-icons">dashboard</i></li>
-                <li class="divider"></li>
-                 <ul class="white-text">
-                  <li><a class="kanji n1 white-text" href="?pageno=1&level=1">N1</a></li>
-              <li><a class="kanji n2 white-text" href="?pageno=1&level=2">N2</a></li>
-              <li><a class="kanji n3 white-text" href="?pageno=1&level=3">N3</a></li>
-              <li><a class="kanji n4 white-text" href="?pageno=1&level=4">N4</a></li>
-              <li><a class="kanji n5 white-text" href="?pageno=1&level=5">N5</a></li>
-                  <li class="divider"></li>
-                  <li><a class=" white-text" href="#!">OTHERS</a></li>
-                </ul>
-              </ul>
-            </ul>
-            
-            <!-- DROPDOWN MENU -->
-            <ul id="dropdown1" class="dropdown-content">
-                
-            </ul>
-            
-            <!-- HAMBURGER ICON -->
-            <a href="#" data-target="slide-out" class="sidenav-trigger  hide-on-med-and-up"><i class="material-icons">menu</i></a>
-            
-            </div>
-            </nav>
-            </div>
+        <!-- DROPDOWN MENU -->
+        <ul id="dropdown1" class="dropdown-content">
 
-       <!-- SEARCH BAR -->
+        </ul>
+
+        <!-- HAMBURGER ICON -->
+        <a href="#" data-target="slide-out" class="sidenav-trigger  hide-on-med-and-up"><i
+            class="material-icons">menu</i></a>
+
+      </div>
+    </nav>
+  </div>
+
+  <!-- SEARCH BAR -->
   <nav class="search-bar green lighten-2">
     <div class="nav-wrapper">
       <form action="">
@@ -94,66 +98,75 @@
     </div>
   </nav>
 
-<script>
-$(document).ready(function(){
-    $('.sidenav').sidenav();
-    $('.dropdown-trigger').dropdown();
-    
+  <script>
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+      $('.dropdown-trigger').dropdown();
 
-    $('#autocomplete-input').on('keydown', (e) => {
       
-       
+      $('#autocomplete-input').on('keydown', (e) => {
 
-      if (e.keyCode === 13) {
-        let searchText = $('#autocomplete-input').val().toString();
-        
-        $.ajax({
-          type: 'GET',
-          url: 'php/search.php',
-          data: { searchText: searchText },
-          success: function (result) {
-            window.location='php/search.php?searchText='+ searchText;
+        if (e.keyCode === 13) {
+          let searchText = $('#autocomplete-input').val().toString();
+
+          
+          var currentRoute = window.location.pathname;
+          console.log(currentRoute);
+
+
+          if (window.location.pathname === "/index.php") {
+            url = 'php/search.php';
+            searchParams = 'php/search.php?searchText=';
+          } else {
+              url = 'search.php';
+              searchParams = 'php/search.php?searchText=';
           }
-        });
-        $('#autocomplete-input').val('');
-      }
-      
-       
+
+
+          $.ajax({
+            type: 'GET',
+            url: url,
+            data: { searchText: searchText },
+            success: function (result) {
+              window.location =  searchParams + searchText;
+            }
+          });
+          $('#autocomplete-input').val('');
+        }
+
+
+      });
+
+
+
+
+
+      // $('.kanji').click( (e) => {
+      //   let level = e.target.className.match(/[\w-]*n\d[\w-]*/g).toString();
+
+
+      //   $.ajax({
+      //     type: 'POST',
+      //     url: 'php/test.php',
+      //     data: { level: level },
+      //     success: function (response) {
+      //       console.log(response);
+      //     }
+      //   });
+      // });
+
+
+      $('input.autocomplete').autocomplete({
+        data: {
+          "Apple": null,
+          "Microsoft": null,
+          "Google": null,
+          "Gargle": null
+        }
+      });
+      clean(document.body);
     });
 
+  </script>
 
-
-
-
-    // $('.kanji').click( (e) => {
-    //   let level = e.target.className.match(/[\w-]*n\d[\w-]*/g).toString();
-      
-  
-    //   $.ajax({
-    //     type: 'POST',
-    //     url: 'php/test.php',
-    //     data: { level: level },
-    //     success: function (response) {
-    //       console.log(response);
-    //     }
-    //   });
-    // });
-
-
-    $('input.autocomplete').autocomplete({
-      data: {
-      "Apple": null,
-      "Microsoft": null,
-      "Google": null,
-      "Gargle":null
-      }
-      });                
-  });
-
-
-
-</script>
-
-      
-     
-
+  <script src="../script.js"></script>

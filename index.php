@@ -8,7 +8,7 @@
 <body>
   <?php include $TEMPLATES_DIR . 'navbar.html'; ?>
 
-  <?php require $PHP_DIR . 'setupPagination.php'; ?>
+  <?php require $PHP_DIR . 'sqlPaginate.php'; ?>
       
   <?php include $TEMPLATES_DIR . 'displayCards.html'; ?>
 

@@ -16,6 +16,15 @@ body {
 	overflow: hidden;
 }
 
+.inline-block-list {
+	/* ul or ol with this class */
+	font-size: 0;
+}
+
+.inline-block-list li {
+	font-size: 14px; /* put the font-size back */
+}
+
 /* .el {
   white-space: nowrap; 
   width: 60%; 
@@ -55,6 +64,10 @@ body {
 }
 */
 
+#slide-out {
+	max-width: 80px;
+}
+
 .wrapper {
 	min-height: 100%;
 	height: auto !important;
@@ -64,4 +77,10 @@ body {
 .footer,
 .push {
 	height: 142px; /* .push must be the same height as .footer */
+}
+
+@media (min-width: 991px) {
+	main {
+		padding-left: 120px;
+	}
 }
